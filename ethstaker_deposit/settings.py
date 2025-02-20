@@ -33,6 +33,7 @@ MEKONG = 'mekong'
 EPHEMERY = 'ephemery'
 GNOSIS = 'gnosis'
 CHIADO = 'chiado'
+ENDURANCE_DEVNET = 'endurance_devnet'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
@@ -80,7 +81,12 @@ ChiadoSetting = BaseChainSetting(
     GENESIS_FORK_VERSION=bytes.fromhex('0000006f'),
     EXIT_FORK_VERSION=bytes.fromhex('0300006f'),
     GENESIS_VALIDATORS_ROOT=bytes.fromhex('9d642dac73058fbf39c0ae41ab1e34e4d889043cb199851ded7095bc99eb4c1e'))
-
+# Endurance Devnet setting
+EnduranceDevnetSetting = BaseChainSetting(
+    NETWORK_NAME=ENDURANCE_DEVNET,
+    GENESIS_FORK_VERSION=bytes.fromhex('10000001'),
+    EXIT_FORK_VERSION=bytes.fromhex('10000001'),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex('202c996ddee3afe959f106b6759bbd3453a592f70ada65ab44b0c6dfdd0d3df5'))
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
     MAINNET: MainnetSetting,
@@ -90,6 +96,7 @@ ALL_CHAINS: Dict[str, BaseChainSetting] = {
     EPHEMERY: EphemerySetting,
     GNOSIS: GnosisSetting,
     CHIADO: ChiadoSetting,
+    ENDURANCE_DEVNET: EnduranceDevnetSetting,
 }
 
 ALL_CHAIN_KEYS: tuple[str, ...] = tuple(ALL_CHAINS.keys())
